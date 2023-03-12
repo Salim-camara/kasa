@@ -8,19 +8,20 @@ import Footer from "../components/Footer";
 
 const Home = () => {
   const [logements, setlogements] = useState(Data);
-  console.log("l12 ", logements);
 
   return (
-    <div className="home">
-      <Header />
-      <div className="home__banner">
-        <img src={Banner} className="home__banner--img" />
-        <p className="home__banner--text">Chez vous, partout et ailleurs</p>
-      </div>
-      <div className="home__cards">
-        {logements.map((el, i) => {
-          return <Card logement={el} />;
-        })}
+    <div>
+      <div className="home">
+        <Header />
+        <div className="home__banner">
+          <img src={Banner} className="home__banner--img" />
+          <p className="home__banner--text">Chez vous, partout et ailleurs</p>
+        </div>
+        <div className="home__cards">
+          {logements.map((el, i) => {
+            return <Card logement={el} />;
+          })}
+        </div>
       </div>
       <Footer />
     </div>
