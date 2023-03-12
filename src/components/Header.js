@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "./../assets/images/logo.png";
-import "./../styles/components.js/Header.css";
+import "./../styles/components/Header.css";
 
 
 

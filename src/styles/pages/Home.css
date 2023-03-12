@@ -1,0 +1,29 @@
+.home {
+    display: flex;
+    flex-direction: column;
+}
+
+.home__banner {
+    width: 100%;
+    height: 223px;
+    position: relative;
+    margin-top: 50px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.home__banner--img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.home__banner--text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 48px;
+    margin: 0;
+}
