@@ -1,0 +1,25 @@
+.card {
+    width: 340px;
+    height: 340px;
+    border-radius:  10px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.card--img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card--text {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    font-size: 18px;
+    color: white;
+    text-align: start;
+    max-width: 60%;
+}
