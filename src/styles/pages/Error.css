@@ -1,0 +1,18 @@
+.error {
+    padding: 20px 20px 0 20px;
+}
+
+.error__title {
+    font-size: 288px;
+    margin: 0;
+}
+
+.error__subTitle {
+    font-size: 36px;
+    margin: 0;
+    margin-bottom: 50;
+}
+
+.error__link {
+    font-size: 18px;
+}

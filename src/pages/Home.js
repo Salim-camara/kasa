@@ -7,7 +7,7 @@ import Card from "../components/Card";
 import Footer from "../components/Footer";
 
 const Home = () => {
-  const [logements, setlogements] = useState(Data);
+  const [logements , setlogements] = useState(Data);
 
   return (
     <div>
