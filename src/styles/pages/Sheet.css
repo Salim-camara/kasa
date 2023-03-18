@@ -1,9 +1,57 @@
 .sheet {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 0 20px;
 }
 
 .sheet--caroussel {
-    margin-top: 60px;
+  margin-top: 60px;
+}
+
+.sheet__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.sheet__info__left--title {
+  margin: 0;
+}
+
+.sheet__info__left--location {
+  margin: 0;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+/* move to other file */
+.tag {
+  background-color: #ff6060;
+  min-width: 100px;
+  width: fit-content;
+  border-radius: 8px;
+}
+
+.tag--text {
+  color: white;
+  margin: 0;
+}
+
+.sheet__info__right__top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.sheet__info__right__top--avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+}
+
+.sheet__info__right__top--host {
+    text-align: right;
+    margin-right: 20px;
 }
