@@ -1,0 +1,9 @@
+.sheet {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 0 20px;
+}
+
+.sheet--caroussel {
+    margin-top: 60px;
+}
