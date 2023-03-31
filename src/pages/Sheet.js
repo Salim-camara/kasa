@@ -6,6 +6,7 @@ import Banner from "./../assets/images/banner.png";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import "./../styles/pages/Sheet.css";
+import Rating from "../components/Rating";
 
 const Sheet = ({ state }) => {
   const location = useLocation();
@@ -20,6 +21,7 @@ const Sheet = ({ state }) => {
       }
     });
   }, []);
+
 
   return (
     <div>
@@ -45,7 +47,9 @@ const Sheet = ({ state }) => {
               </p>
               <img src={Banner} className="sheet__info__right__top--avatar" />
             </div>
-            <div className="sheet__info__right__bottom"></div>
+            <div className="sheet__info__right__bottom">
+              {/* <Rating /> */}
+            </div>
           </div>
         </div>
       </div>
