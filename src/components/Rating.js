@@ -15,6 +15,10 @@ const Rating = ({ rate }) => {
             // grey icon
         }
     }
+
+    useEffect(() => {
+        handleStars();
+    }, [])
     return (
         <div>       
             {stars.map((el) => (el))}

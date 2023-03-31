@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import "./../styles/pages/Sheet.css";
 import Rating from "../components/Rating";
+import Tags from "../components/Tags";
 
 const Sheet = ({ state }) => {
   const location = useLocation();
@@ -22,7 +23,6 @@ const Sheet = ({ state }) => {
     });
   }, []);
 
-
   return (
     <div>
       <div className="sheet">
@@ -34,8 +34,10 @@ const Sheet = ({ state }) => {
           <div className="sheet__info__left">
             <h1 className="sheet__info__left--title">{tmpData.title}</h1>
             <h3 className="sheet__info__left--location">{tmpData.location}</h3>
-            <div className="tag">
-              <p className="tag--text">tag</p>
+            <div className="sheet__info__left--tags">
+              {data?.tags.map((el, i) => (
+                <Tags text={el} />
+              ))}
             </div>
           </div>
           <div className="sheet__info__right">
@@ -47,9 +49,7 @@ const Sheet = ({ state }) => {
               </p>
               <img src={Banner} className="sheet__info__right__top--avatar" />
             </div>
-            <div className="sheet__info__right__bottom">
-              {/* <Rating /> */}
-            </div>
+            <div className="sheet__info__right__bottom">{/* <Rating /> */}</div>
           </div>
         </div>
       </div>

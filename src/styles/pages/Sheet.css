@@ -26,23 +26,16 @@
   margin-bottom: 10px;
 }
 
-/* move to other file */
-.tag {
-  background-color: #ff6060;
-  min-width: 100px;
-  width: fit-content;
-  border-radius: 8px;
-}
-
-.tag--text {
-  color: white;
-  margin: 0;
+.sheet__info__left--tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .sheet__info__right__top {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .sheet__info__right__top--avatar {
@@ -52,6 +45,6 @@
 }
 
 .sheet__info__right__top--host {
-    text-align: right;
-    margin-right: 20px;
+  text-align: right;
+  margin-right: 20px;
 }
