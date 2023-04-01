@@ -8,6 +8,7 @@ import Header from "../components/Header";
 import "./../styles/pages/Sheet.css";
 import Rating from "../components/Rating";
 import Tags from "../components/Tags";
+import Collapse from "../components/Collapse";
 
 const Sheet = ({ state }) => {
   const location = useLocation();
@@ -32,8 +33,8 @@ const Sheet = ({ state }) => {
         </div>
         <div className="sheet__info">
           <div className="sheet__info__left">
-            <h1 className="sheet__info__left--title">{tmpData.title}</h1>
-            <h3 className="sheet__info__left--location">{tmpData.location}</h3>
+            <h1 className="sheet__info__left--title">{data?.title}</h1>
+            <h3 className="sheet__info__left--location">{data?.location}</h3>
             <div className="sheet__info__left--tags">
               {data?.tags.map((el, i) => (
                 <Tags text={el} />
@@ -43,14 +44,18 @@ const Sheet = ({ state }) => {
           <div className="sheet__info__right">
             <div className="sheet__info__right__top">
               <p className="sheet__info__right__top--host">
-                {tmpData.host.name.split(" ")[0]}
+                {data?.host.name.split(" ")[0]}
                 <br />
-                {tmpData.host.name.split(" ")[1]}
+                {data?.host.name.split(" ")[1]}
               </p>
               <img src={Banner} className="sheet__info__right__top--avatar" />
             </div>
             <div className="sheet__info__right__bottom">{/* <Rating /> */}</div>
           </div>
+        </div>
+        <div className="sheet__collapseContainer" style={{ width: "45%" }}>
+          <Collapse title={'Description'} description={data?.description} />
+          <Collapse title={'Equipements'} description={data?.equipments} />
         </div>
       </div>
       {/* <Footer /> */}
