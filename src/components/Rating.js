@@ -1,29 +1,32 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./../styles/components/Rating.css";
-
+import StarGrey from "./../assets/images/starGrey.png";
+import StarActive from "./../assets/images/starActive.png";
 
 const Rating = ({ rate }) => {
+  const [stars, setStars] = useState([]);
 
-    const [stars, setStars] = useState([]);
-
-    const handleStars = () => {
-        for(let i = 0; i < 6; i++) {
-            if(i <= rate) {
-                // setStars((prev) => [...prev, fontawsome icon active])
-                return;
-            }
-            // grey icon
-        }
+  const handleStars = () => {
+    for (let i = 0; i < 5; i++) {
+      if (i <= parseInt(rate)) {
+        setStars((prev) => [
+          ...prev,
+          <img src={StarActive} className="rating--img" />,
+        ]);
+      } else {
+        setStars((prev) => [
+          ...prev,
+          <img src={StarGrey} className="rating--img" />,
+        ]);
+      }
     }
+  };
 
-    useEffect(() => {
-        handleStars();
-    }, [])
-    return (
-        <div>       
-            {stars.map((el) => (el))}
-        </div>
-    )
-}       
+  useEffect(() => {
+    setStars([]);
+    handleStars();
+  }, [rate]);
+  return <div className="rating">{stars?.map((el) => el)}</div>;
+};
 
 export default Rating;

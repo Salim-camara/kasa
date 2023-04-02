@@ -48,3 +48,10 @@
   text-align: right;
   margin-right: 20px;
 }
+
+.sheet__collapseContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 50px 0 50px 0;
+}

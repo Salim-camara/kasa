@@ -50,15 +50,15 @@ const Sheet = ({ state }) => {
               </p>
               <img src={Banner} className="sheet__info__right__top--avatar" />
             </div>
-            <div className="sheet__info__right__bottom">{/* <Rating /> */}</div>
+            <div className="sheet__info__right__bottom"><Rating rate={data?.rating}/></div>
           </div>
         </div>
-        <div className="sheet__collapseContainer" style={{ width: "45%" }}>
-          <Collapse title={'Description'} description={data?.description} />
-          <Collapse title={'Equipements'} description={data?.equipments} />
+        <div className="sheet__collapseContainer">
+          <Collapse title={'Description'} description={data?.description} style={{width: '45%'}}/>
+          <Collapse title={'Equipements'} description={data?.equipments} style={{width: '45%'}}/>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
