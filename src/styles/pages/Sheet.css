@@ -17,6 +17,7 @@
 }
 
 .sheet__info__left--title {
+  text-align: left;
   margin: 0;
 }
 

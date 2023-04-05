@@ -7,12 +7,14 @@ import Card from "../components/Card";
 import Footer from "../components/Footer";
 
 const Home = () => {
-  const [logements , setlogements] = useState(Data);
+  const [logements, setlogements] = useState(Data);
 
   return (
     <div>
       <div className="home">
-        <Header />
+        <div style={{width: '100%'}}>
+          <Header />
+        </div>
         <div className="home__banner">
           <img src={Banner} className="home__banner--img" />
           <p className="home__banner--text">Chez vous, partout et ailleurs</p>

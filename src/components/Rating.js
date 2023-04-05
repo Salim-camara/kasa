@@ -8,17 +8,13 @@ const Rating = ({ rate }) => {
 
   const handleStars = () => {
     for (let i = 0; i < 5; i++) {
-      if (i <= parseInt(rate)) {
-        setStars((prev) => [
-          ...prev,
-          <img src={StarActive} className="rating--img" />,
-        ]);
-      } else {
-        setStars((prev) => [
-          ...prev,
-          <img src={StarGrey} className="rating--img" />,
-        ]);
-      }
+      setStars((prev) => [
+        ...prev,
+        <img
+          src={i <= parseInt(rate) ? StarActive : StarGrey}
+          className="rating--img"
+        />,
+      ]);
     }
   };
 
