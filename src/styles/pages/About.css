@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   padding: 20px 20px 0 20px;
+  margin-bottom: 220px;
+  height: 100%;
 }
 
 .about--img {
@@ -10,4 +12,31 @@
   height: 223px;
   object-fit: cover;
   border-radius: 20px;
+  margin-top: 50px;
+}
+
+.about__footer {
+  flex-grow: 1;
+  height: 2000;
+  background-color: green;
+}
+
+.about__collapse--container {
+  margin-top: 50px;
+  width: 80%;
+}
+
+.about__collapse {
+  margin-top: 20px;
+}
+
+/* mobile */
+@media screen and (max-width: 900px) {
+  .about--img {
+    width: 90%;
+  }
+  .about__collapse--container {
+    width: 90%;
+    margin-top: 10px;
+  }
 }
