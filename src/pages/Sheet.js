@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Caroussel from "../components/Caroussel";
 import Data from "./../assets/data/logements.json";
 import Banner from "./../assets/images/banner.png";
@@ -12,9 +12,16 @@ import Collapse from "../components/Collapse";
 
 const Sheet = ({ state }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [data, setData] = useState();
   const tmpData = Data[0];
   const params = useParams();
+  const [allId, setAllId] = useState([]);
+  useEffect(() => {
+    Data.map((el) => {
+      setAllId((prev) => [...prev, el.id]);
+    });
+  }, []);
 
   useEffect(() => {
     Data.map((el) => {
@@ -23,6 +30,14 @@ const Sheet = ({ state }) => {
       }
     });
   }, []);
+
+  useEffect(() => {
+    if (allId.length > 0) {
+      if (!allId.includes(params.id)) {
+        navigate("Error");
+      }
+    }
+  });
 
   return (
     <div>
@@ -60,14 +75,11 @@ const Sheet = ({ state }) => {
             <Collapse title={"Description"} description={data?.description} />
           </div>
           <div style={{ width: "45%" }}>
-            <Collapse
-              title={"Equipements"}
-              description={data?.equipments}
-            />
+            <Collapse title={"Equipements"} description={data?.equipments} />
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
