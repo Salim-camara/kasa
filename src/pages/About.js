@@ -13,16 +13,16 @@ const About = () => {
         <Header />
         <img src={Banner} className="about--img" />
         <div className="about__collapse--container">
-          {data.map((el) => {
+          {data.map((el, i) => {
             return (
-              <div className="about__collapse">
+              <div className="about__collapse" key={i}>
                 <Collapse title={el.title} description={el.description} />
               </div>
             );
           })}
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

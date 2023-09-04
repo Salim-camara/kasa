@@ -6,6 +6,11 @@ import StarActive from "./../assets/images/starActive.png";
 const Rating = ({ rate }) => {
   const [stars, setStars] = useState([]);
 
+  useEffect(() => {
+    setStars([]);
+    handleStars();
+  }, [rate]);
+
   const handleStars = () => {
     for (let i = 0; i < 5; i++) {
       setStars((prev) => [
@@ -18,11 +23,13 @@ const Rating = ({ rate }) => {
     }
   };
 
-  useEffect(() => {
-    setStars([]);
-    handleStars();
-  }, [rate]);
-  return <div className="rating">{stars?.map((el) => el)}</div>;
+  return (
+    <div className="rating">
+      {stars?.map((el, i) => (
+        <p key={i}>{el}</p>
+      ))}
+    </div>
+  );
 };
 
 export default Rating;

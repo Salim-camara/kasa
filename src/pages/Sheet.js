@@ -11,20 +11,13 @@ import Tags from "../components/Tags";
 import Collapse from "../components/Collapse";
 
 const Sheet = ({ state }) => {
-  const location = useLocation();
   const navigate = useNavigate();
   const [data, setData] = useState();
-  const tmpData = Data[0];
   const params = useParams();
   const [allId, setAllId] = useState([]);
   useEffect(() => {
     Data.map((el) => {
       setAllId((prev) => [...prev, el.id]);
-    });
-  }, []);
-
-  useEffect(() => {
-    Data.map((el) => {
       if (el.id === params.id) {
         setData(el);
       }
@@ -37,7 +30,7 @@ const Sheet = ({ state }) => {
         navigate("Error");
       }
     }
-  });
+  }, [allId]);
 
   return (
     <div>
@@ -52,7 +45,7 @@ const Sheet = ({ state }) => {
             <h3 className="sheet__info__left--location">{data?.location}</h3>
             <div className="sheet__info__left--tags">
               {data?.tags.map((el, i) => (
-                <Tags text={el} />
+                <Tags text={el} key={i} />
               ))}
             </div>
           </div>
@@ -66,20 +59,28 @@ const Sheet = ({ state }) => {
               <img src={Banner} className="sheet__info__right__top--avatar" />
             </div>
             <div className="sheet__info__right__bottom">
-              <Rating rate={data?.rating} />
+              <Rating rate={data?.rating} key={"rating"} />
             </div>
           </div>
         </div>
         <div className="sheet__collapseContainer">
-          <div style={{ width: "45%" }}>
-            <Collapse title={"Description"} description={data?.description} />
+          <div className="sheet__collapseContainer--solo">
+            <Collapse
+              title={"Description"}
+              description={data?.description}
+              key={"collapseDescription"}
+            />
           </div>
-          <div style={{ width: "45%" }}>
-            <Collapse title={"Equipements"} description={data?.equipments} />
+          <div className="sheet__collapseContainer--solo">
+            <Collapse
+              title={"Equipements"}
+              description={data?.equipments}
+              key={"collapseEquipements"}
+            />
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

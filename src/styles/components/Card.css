@@ -1,25 +1,33 @@
 .card {
-    width: 340px;
-    height: 340px;
-    border-radius:  10px;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 30px;
-    cursor: pointer;
+  width: 30%;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+  cursor: pointer;
 }
 
 .card--img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .card--text {
-    position: absolute;
-    bottom: 0;
-    left: 10px;
-    font-size: 18px;
-    color: white;
-    text-align: start;
-    max-width: 60%;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  font-size: 18px;
+  color: white;
+  text-align: start;
+  max-width: 60%;
+}
+
+/* mobile */
+@media screen and (max-width: 900px) {
+  .card {
+    width: 80vw;
+    height: 80vw;
+  }
 }

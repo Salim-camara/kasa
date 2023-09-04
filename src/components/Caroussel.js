@@ -6,10 +6,6 @@ import "./../styles/components/Caroussel.css";
 const Caroussel = ({ data }) => {
   const [indexImg, setIndexImg] = useState(0);
 
-  useEffect(() => {
-    console.log("l11", data);
-  }, []);
-
   const handlePrevious = () => {
     if (indexImg === 0) {
       setIndexImg((prev) => data.pictures?.length - 1);
@@ -28,18 +24,19 @@ const Caroussel = ({ data }) => {
 
   return (
     <div className="caroussel">
-      <p className="arrow" onClick={handlePrevious}>
-        {"<"}
-      </p>
-      {data && data.pictures && (
-        <img
-          src={data.pictures[indexImg]}
-          className="caroussel--img"
-        />
+      {data?.pictures.length > 1 && (
+        <p className="arrow" onClick={handlePrevious}>
+          {"<"}
+        </p>
       )}
-      <p className="arrow--right" onClick={handleNext}>
-        {">"}
-      </p>
+      {data && data.pictures && (
+        <img src={data.pictures[indexImg]} className="caroussel--img" />
+      )}
+      {data?.pictures.length > 1 && (
+        <p className="arrow--right" onClick={handleNext}>
+          {">"}
+        </p>
+      )}
     </div>
   );
 };

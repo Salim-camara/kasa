@@ -24,9 +24,11 @@ const Collapse = ({ title, description, style }) => {
         className="collapse__description"
         style={showDesc ? { display: "flex" } : { display: "none" }}
       >
-        {description && typeof description !== 'string' ? (
-          description?.map((el) => (
-            <p className="collapse__description--text">{el}</p>
+        {description && typeof description !== "string" ? (
+          description?.map((el, i) => (
+            <p className="collapse__description--text" key={i}>
+              {el}
+            </p>
           ))
         ) : (
           <p className="collapse__description--text">{description}</p>

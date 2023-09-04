@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("./../assets//fonts/Montserrat-Regular.ttf");
+}
+
 .App {
-    color: #FF6060;
+  font-family: "Montserrat";
+  color: #ff6060;
+  font-weight: 700;
 }

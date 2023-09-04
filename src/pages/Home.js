@@ -12,16 +12,19 @@ const Home = () => {
   return (
     <div>
       <div className="home">
-        <div style={{width: '100%'}}>
+        <div style={{ width: "100%" }}>
           <Header />
         </div>
         <div className="home__banner">
           <img src={Banner} className="home__banner--img" />
-          <p className="home__banner--text">Chez vous, partout et ailleurs</p>
+          <div className="home__banner__textContainer">
+            <p className="home__banner--text">Chez vous,&nbsp;</p>
+            <p className="home__banner--text">partout et ailleurs</p>
+          </div>
         </div>
         <div className="home__cards">
           {logements.map((el, i) => {
-            return <Card logement={el} />;
+            return <Card logement={el} key={el.id} />;
           })}
         </div>
       </div>

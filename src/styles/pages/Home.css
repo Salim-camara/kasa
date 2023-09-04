@@ -1,8 +1,8 @@
 .home {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 20px 20px 0 20px;
-  overflow: scroll;
 }
 
 .home__banner {
@@ -18,9 +18,11 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  object-position: right;
+  filter: brightness(60%);
 }
 
-.home__banner--text {
+.home__banner__textContainer {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -28,15 +30,54 @@
   color: white;
   font-size: 48px;
   margin: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+
+.home__banner--text {
+  color: white;
+  font-size: 48px;
+  margin: 0;
+  text-align: left;
+  white-space: nowrap;
 }
 
 .home__cards {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 5%;
   margin: 80px;
   padding: 30px 30px 0 30px;
   border-radius: 20px;
   background-color: #f6f6f6;
+}
+
+/* mobile */
+@media screen and (max-width: 900px) {
+  .home__banner--img {
+    width: 80vw;
+    border-radius: 15px;
+    zoom: 2;
+    object-position: -125px;
+  }
+  .home__banner--text {
+    width: 70%;
+  }
+  .home__banner__textContainer {
+    flex-direction: column;
+  }
+  .home__cards {
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .home__banner--text {
+    font-size: 30px;
+  }
 }
