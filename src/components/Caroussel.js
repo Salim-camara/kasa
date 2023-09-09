@@ -23,19 +23,34 @@ const Caroussel = ({ data }) => {
   };
 
   return (
-    <div className="caroussel">
-      {data?.pictures.length > 1 && (
+    <div className="caroussel" style={{ position: "relative" }}>
+      {data?.pictures?.length > 1 && (
         <p className="arrow" onClick={handlePrevious}>
           {"<"}
         </p>
       )}
-      {data && data.pictures && (
+      {data && data?.pictures && (
         <img src={data.pictures[indexImg]} className="caroussel--img" />
       )}
       {data?.pictures.length > 1 && (
         <p className="arrow--right" onClick={handleNext}>
           {">"}
         </p>
+      )}
+      {data?.pictures.length > 1 && (
+        <div
+          style={{
+            position: "absolute",
+            bottom: 10,
+            left: "50%",
+            width: 80,
+            marginLeft: -40,
+          }}
+        >
+          <p style={{ color: "white", fontWeight: "bolder" }}>
+            {indexImg + 1}/{data?.pictures?.length}
+          </p>
+        </div>
       )}
     </div>
   );

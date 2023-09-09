@@ -14,3 +14,12 @@
   cursor: pointer;
   color: inherit;
 }
+
+@media screen and (max-width: 900px) {
+  .header__right--link {
+    text-transform: uppercase;
+  }
+  .header--logo {
+    height: 35px;
+  }
+}
